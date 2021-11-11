@@ -1,0 +1,13 @@
+.img-top{
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.back-to-home-btn{
+    background-color: #FF5722;
+    padding: 10px 25px;
+    border:none;
+    color: white;
+    border-radius: 8px;
+}

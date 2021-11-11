@@ -1,0 +1,33 @@
+.about-header-bg{
+    margin-top: 80px;
+    background-image: url('http://g5p6r6b9.stackpathcdn.com/travlio/wp-content/uploads/2020/08/banner-5.jpg');
+    
+}
+.about-header-bg p{
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 50px 15px;
+    
+}
+.mission{
+      margin-top: 80px;
+      margin-bottom: 60px;  
+}
+.mission img{
+    border-radius: 10px;
+}
+.mission-details{
+    padding-top: 50px;
+    padding-left: 10px;
+}
+.team-members{
+    margin-top: 60px;
+    padding-bottom: -60px;
+}
+.team-member-card{
+    margin-top: 30px;
+}
+.team-member-card img{
+    border-radius: 8px;
+}
