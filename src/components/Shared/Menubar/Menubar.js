@@ -74,6 +74,21 @@ const Menubar = () => {
                             >
                                 Contact
                             </NavLink>
+                            <NavLink
+                                to="/adminDashboard"
+                                style={{
+                                    textDecoration: "none",
+                                    fontSize: "20px",
+                                    marginLeft: "15px",
+                                    color: "#234262"
+                                }}
+                                activeStyle={{
+
+                                    color: "#FF5722"
+                                }}
+                            >
+                                Admin
+                            </NavLink>
                             {
                                 user.email ?
                                     <button className="btn btn-outline-primary mx-3" onClick={logOut}>Logout</button>
@@ -93,7 +108,7 @@ const Menubar = () => {
                                         Login
                                     </NavLink>
                             }
-                            {
+                            {/* {
                                 user.email ?
                                     <></>
                                     // <button className="btn btn-outline-primary mx-3" onClick={logOut}>Logout</button>
@@ -112,7 +127,7 @@ const Menubar = () => {
                                     >
                                         Admin
                                     </NavLink>
-                            }
+                            } */}
 
                             {user.email && <span>Hello {user.displayName}</span>}
 

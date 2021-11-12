@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
+import { NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const Booking = () => {
+    const { user } = useAuth();
+    // console.log(user.email);
     const { singlePackageId } = useParams();
     console.log(singlePackageId);
     const [singlePackage, setSinglePackage] = useState({});
 
-    // const email = sessionStorage.getItem('email');
+    const email = user.email;
 
     useEffect(() => {
         fetch(`http://localhost:5000/singlePackage/${singlePackageId}`)
             .then(res => res.json())
             .then(data => setSinglePackage(data))
     }, [])
-    console.log(singlePackage);
+    // console.log(singlePackage);
 
     const {
         register,
@@ -23,23 +27,23 @@ const Booking = () => {
         formState: { errors },
     } = useForm();
 
-    // const onSubmit = (data) => {
-    //     data.email = email;
-    //     data.status = "pending";
+    const onSubmit = (data) => {
+        data.email = email;
+        data.status = "pending";
 
-    //     fetch('http://localhost:5000/confirmOrder', {
-    //         method: "POST",
-    //         headers: {
-    //             "content-type": "application/json"
-    //         },
-    //         body: JSON.stringify(data),
+        fetch('http://localhost:5000/confirmBooking', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(data),
 
-    //     })
-    //         .then(res => res.json())
-    //         .then(result => console.log(result));
+        })
+            .then(res => res.json())
+            .then(result => console.log(result));
 
-    //     console.log(data);
-    // }
+        // console.log(data);
+    }
 
     return (
         <div>
@@ -57,8 +61,8 @@ const Booking = () => {
                     </div>
                     <div className="col-md-6">
                         <h1>booking Form</h1>
-                        {/* <form onSubmit={handleSubmit(onSubmit)}> */}
-                        <form>
+                        <form onSubmit={handleSubmit(onSubmit)}>
+
                             <input
                                 {...register("location")}
                                 defaultValue={singlePackage?.location}
@@ -111,6 +115,11 @@ const Booking = () => {
                                 className="btn btn-info w-50"
                             />
                         </form>
+                        <NavLink to="/myBookings">
+                            <div className="text-center my-3">
+                                <button className="back-to-home-btn">See all Booking</button>
+                            </div>
+                        </NavLink>
                     </div>
                 </div>
             </div>

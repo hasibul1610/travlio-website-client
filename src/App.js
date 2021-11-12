@@ -13,6 +13,8 @@ import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import AdminDashboard from './components/AdminDashboard/AdminDashboard';
 import Booking from './components/Booking/Booking';
+import MyBookings from './components/MyBookings/MyBookings';
+
 
 
 
@@ -35,6 +37,9 @@ function App() {
             <Route exact path="/contact">
               <Contact></Contact>
             </Route>
+            <Route exact path="/myBookings">
+              <MyBookings></MyBookings>
+            </Route>
             <Route exact path="/login">
               <Login></Login>
             </Route>
@@ -44,9 +49,9 @@ function App() {
             <Route exact path="/booking/:singlePackageId">
               <Booking></Booking>
             </Route>
-            <Route exact path="/adminDashboard">
+            <PrivateRoute exact path="/adminDashboard">
               <AdminDashboard></AdminDashboard>
-            </Route>
+            </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import AddPackages from '../AddPackages/AddPackages';
+import ManagePackages from '../ManagePackages/ManagePackages';
 import './AdminDashboard.css';
 
 const AdminDashboard = () => {
@@ -14,7 +15,7 @@ const AdminDashboard = () => {
                             onClick={() => setControl("addPackages")}
                         >Add Packages</li>
                         <li
-                            onClick={() => setControl("services")}
+                            onClick={() => setControl("managePackages")}
                         >Manage Packages</li>
                         <li
                             onClick={() => setControl("manageBooking")}
@@ -27,6 +28,7 @@ const AdminDashboard = () => {
                 <div className="col-lg-10 col-md-9">
                     <h2>Render Here</h2>
                     {control === "addPackages" && <AddPackages></AddPackages>}
+                    {control === "managePackages" && <ManagePackages></ManagePackages>}
                 </div>
             </div>
         </div>
