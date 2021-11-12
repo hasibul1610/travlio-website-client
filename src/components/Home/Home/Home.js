@@ -1,10 +1,11 @@
 import React from 'react';
+import AllPackages from '../AllPackages/AllPackages';
 import './Home.css';
 
 const Home = () => {
     return (
-        <div>
-            <h2>Home</h2>
+        <div className="home">
+            <AllPackages></AllPackages>
         </div>
     );
 };

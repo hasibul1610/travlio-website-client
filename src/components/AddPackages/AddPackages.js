@@ -30,6 +30,12 @@ const AddPackages = () => {
                         <div>
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <input
+                                    {...register("location")}
+                                    placeholder="Location"
+                                    className="p-2 m-2 w-100"
+                                />
+                                <br />
+                                <input
                                     {...register("name")}
                                     placeholder="Package Name"
                                     className="p-2 m-2 w-100"

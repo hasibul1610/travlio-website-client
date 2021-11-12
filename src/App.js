@@ -12,6 +12,7 @@ import Footer from './components/Shared/Footer/Footer';
 import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import AdminDashboard from './components/AdminDashboard/AdminDashboard';
+import Booking from './components/Booking/Booking';
 
 
 
@@ -40,6 +41,9 @@ function App() {
             <PrivateRoute exact path="/private">
               <Private></Private>
             </PrivateRoute>
+            <Route exact path="/booking/:singlePackageId">
+              <Booking></Booking>
+            </Route>
             <Route exact path="/adminDashboard">
               <AdminDashboard></AdminDashboard>
             </Route>
