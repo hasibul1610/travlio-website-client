@@ -15,7 +15,7 @@ const About = () => {
                     <div className="col-lg-6 col-sm-12 mission-details">
                         <h3>Our Company</h3>
                         <h2>Mission Statement</h2>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam sunt nam quia et distinctio similique, saepe commodi soluta unde, minima accusantium! Corrupti aliquid blanditiis tenetur maxime facere earum rerum sunt magni nihil. Facere, dicta quis! Laudantium temporibus reiciendis eveniet consectetur quibusdam unde excepturi illum pariatur itaque. Doloremque officia tenetur adipisci.</p>
+                        <p>A travel agency is a private retailer or public service that provides travel and tourism-related services to the general public on behalf of accommodation or travel suppliers to offer different kinds of travelling packages for each destination. Travel agencies can provide outdoor recreation activities, airlines, car rentals, cruise lines, hotels, railways, travel insurance, package tours, insurance, guide books, VIP airport lounge access, arranging logistics for luggage and medical items delivery for travellers upon request, public transport timetables, car rentals, and bureau de change services. Travel agencies can also serve as general sales agents for airlines that do not have offices in a specific region.</p>
 
                     </div>
                 </div>

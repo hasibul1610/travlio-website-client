@@ -6,23 +6,26 @@ const ManagePackages = () => {
     const [control, setControl] = useState(false);
 
     useEffect(() => {
-        fetch("http://localhost:5000/packages")
+        fetch("https://peaceful-wildwood-29357.herokuapp.com/packages")
             .then((res) => res.json())
             .then((data) => setPackages(data));
     }, [control]);
 
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/deletePackage/${id}`, {
-            method: "DELETE",
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount) {
-                    setControl(!control)
-                }
+        const proceed = window.confirm("Are Your Sure");
+        if (proceed) {
+            fetch(`https://peaceful-wildwood-29357.herokuapp.com/deletePackage/${id}`, {
+                method: "DELETE",
             })
-        console.log(id);
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount) {
+                        setControl(!control)
+                    }
+                })
+            // console.log(id);
+        }
     }
 
     return (

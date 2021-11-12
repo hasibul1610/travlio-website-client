@@ -13,13 +13,13 @@ const ManageBookings = () => {
     // console.log(status);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allBookings')
+        fetch('https://peaceful-wildwood-29357.herokuapp.com/allBookings')
             .then(res => res.json())
             .then(data => setBookings(data))
     }, [])
 
     const handleUpdate = id => {
-        fetch(`http://localhost:5000/updateStatus/${id}`, {
+        fetch(`https://peaceful-wildwood-29357.herokuapp.com/updateStatus/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

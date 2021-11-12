@@ -1,0 +1,15 @@
+.banner{
+    background-image: url(https://images.alphacoders.com/885/thumb-1920-88541.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner-details h4{
+    font-size: 50px;
+}
+.banner-details h2{
+    font-size: 70px;
+}

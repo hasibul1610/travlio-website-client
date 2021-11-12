@@ -10,22 +10,25 @@ const MyBookings = () => {
     const [control, setControl] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myBookings/${userEmail}`)
+        fetch(`https://peaceful-wildwood-29357.herokuapp.com/myBookings/${userEmail}`)
             .then((res) => res.json())
             .then((data) => setPackages(data));
     }, [control]);//control
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/deleteBooking/${id}`, {
-            method: "DELETE",
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount) {
-                    setControl(!control)
-                }
+        const proceed = window.confirm("Are You Sure");
+        if (proceed) {
+            fetch(`https://peaceful-wildwood-29357.herokuapp.com/deleteBooking/${id}`, {
+                method: "DELETE",
             })
-        // console.log(id);
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount) {
+                        setControl(!control)
+                    }
+                })
+            // console.log(id);
+        }
     }
 
     return (
@@ -33,10 +36,10 @@ const MyBookings = () => {
 
             <h2>Booking By Email : {userEmail}</h2>
 
-            <div className="services">
+            <div className="services mt-5">
                 <div className="row container">
                     {packages?.map((pg) => (
-                        <div className="col-md-4">
+                        <div className="col-md-4 mt-4">
                             <div className="service border border p-3">
                                 <div className="services-img ">
                                     <img className="w-100" src={pg?.image} alt="" />

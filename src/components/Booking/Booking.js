@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import './Booking.css';
 
 const Booking = () => {
     const { user } = useAuth();
@@ -14,7 +15,7 @@ const Booking = () => {
     const email = user.email;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/singlePackage/${singlePackageId}`)
+        fetch(`https://peaceful-wildwood-29357.herokuapp.com/singlePackage/${singlePackageId}`)
             .then(res => res.json())
             .then(data => setSinglePackage(data))
     }, [])
@@ -31,7 +32,7 @@ const Booking = () => {
         data.email = email;
         data.status = "pending";
 
-        fetch('http://localhost:5000/confirmBooking', {
+        fetch('https://peaceful-wildwood-29357.herokuapp.com/confirmBooking', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -47,6 +48,9 @@ const Booking = () => {
 
     return (
         <div>
+            <br />
+            <br />
+            <br />
             <h1 className="text-center my-5">Booking</h1>
             <div className="booking-container">
                 <div className="row container">
@@ -54,13 +58,13 @@ const Booking = () => {
                         <div className="details-img">
                             <img className="w-75" src={singlePackage?.image} alt="" />
                         </div>
-                        <h2>{singlePackage?.name}</h2>
+                        <h2 className="text-start">{singlePackage?.name}</h2>
                         <p className="text-start">{singlePackage?.description}</p>
-                        <h1> price: {singlePackage?.price} $</h1>
+                        <h2 className="text-warning"> price: {singlePackage?.price} $</h2>
 
                     </div>
                     <div className="col-md-6">
-                        <h1>booking Form</h1>
+
                         <form onSubmit={handleSubmit(onSubmit)}>
 
                             <input

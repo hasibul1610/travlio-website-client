@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import './Menubar.css';
 
@@ -91,7 +91,8 @@ const Menubar = () => {
                             </NavLink>
                             {
                                 user.email ?
-                                    <button className="btn btn-outline-primary mx-3" onClick={logOut}>Logout</button>
+
+                                    <Link to="/home"><button className="btn btn-outline-primary mx-3" onClick={logOut}>Logout</button></Link>
                                     : <NavLink
                                         to="/login"
                                         style={{

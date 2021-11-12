@@ -5,17 +5,21 @@ const AddPackages = () => {
     const {
         register,
         handleSubmit,
-        watch,
+        reset,
         formState: { errors },
     } = useForm();
 
     const onSubmit = (data) => {
-        fetch("http://localhost:5000/addPackages", {
+        fetch("https://peaceful-wildwood-29357.herokuapp.com/addPackages", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
         })
-            .then((res) => res.json())
+            .then((res) => {
+                res.json()
+                reset()
+                alert("Successfuly Submitted");
+            })
             .then((result) => console.log(result));
         // console.log(data);
     }
