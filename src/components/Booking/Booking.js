@@ -24,7 +24,7 @@ const Booking = () => {
     const {
         register,
         handleSubmit,
-        watch,
+        reset,
         formState: { errors },
     } = useForm();
 
@@ -40,7 +40,11 @@ const Booking = () => {
             body: JSON.stringify(data),
 
         })
-            .then(res => res.json())
+            .then(res => {
+                res.json()
+                reset()
+                alert("Booked Done!!!")
+            })
             .then(result => console.log(result));
 
         // console.log(data);

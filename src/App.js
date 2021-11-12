@@ -46,9 +46,9 @@ function App() {
             <PrivateRoute exact path="/private">
               <Private></Private>
             </PrivateRoute>
-            <Route exact path="/booking/:singlePackageId">
+            <PrivateRoute exact path="/booking/:singlePackageId">
               <Booking></Booking>
-            </Route>
+            </PrivateRoute>
             <PrivateRoute exact path="/adminDashboard">
               <AdminDashboard></AdminDashboard>
             </PrivateRoute>

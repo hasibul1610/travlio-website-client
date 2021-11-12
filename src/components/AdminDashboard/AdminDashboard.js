@@ -24,7 +24,7 @@ const AdminDashboard = () => {
                     </ul>
                 </div>
                 <div className="col-lg-10 col-md-9">
-                    <h2>Render Here</h2>
+
                     {control === "addPackages" && <AddPackages></AddPackages>}
                     {control === "managePackages" && <ManagePackages></ManagePackages>}
                     {control === "manageBookings" && <ManageBookings></ManageBookings>}
