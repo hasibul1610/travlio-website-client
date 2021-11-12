@@ -39,7 +39,7 @@ const ManagePackages = () => {
                             <th>Package Title</th>
                             <th>Event description</th>
                             <th>Image Link</th>
-                            <th>Status</th>
+
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -50,7 +50,7 @@ const ManagePackages = () => {
                                 <td>{pg.name}</td>
                                 <td>{pg.description}</td>
                                 <td>{pg.image}</td>
-                                <td>{pg.status}</td>
+
                                 <button
                                     onClick={() => handleDelete(pg?._id)}
                                     className="btn bg-danger p-2"
