@@ -93,6 +93,26 @@ const Menubar = () => {
                                         Login
                                     </NavLink>
                             }
+                            {
+                                user.email ?
+                                    <></>
+                                    // <button className="btn btn-outline-primary mx-3" onClick={logOut}>Logout</button>
+                                    : <NavLink
+                                        to="/adminDashboard"
+                                        style={{
+                                            textDecoration: "none",
+                                            fontSize: "20px",
+                                            marginLeft: "15px",
+                                            color: "tomato"
+                                        }}
+                                        activeStyle={{
+                                            fontWeight: "bold",
+                                            color: "#3FCE92"
+                                        }}
+                                    >
+                                        Admin
+                                    </NavLink>
+                            }
 
                             {user.email && <span>Hello {user.displayName}</span>}
 

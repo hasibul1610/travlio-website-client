@@ -11,6 +11,7 @@ import Menubar from './components/Shared/Menubar/Menubar';
 import Footer from './components/Shared/Footer/Footer';
 import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
+import AdminDashboard from './components/AdminDashboard/AdminDashboard';
 
 
 
@@ -39,6 +40,9 @@ function App() {
             <PrivateRoute exact path="/private">
               <Private></Private>
             </PrivateRoute>
+            <Route exact path="/adminDashboard">
+              <AdminDashboard></AdminDashboard>
+            </Route>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
